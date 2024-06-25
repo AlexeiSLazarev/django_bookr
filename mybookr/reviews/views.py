@@ -1,9 +1,6 @@
 from django.shortcuts import render
 
 def index(request):
-    try:
-        name = request.GET["name"]
-    except:
-        name = "world"
+    name = request.GET.get("name") or "world"
     return render(request, "base.html", {"name": name})
 
