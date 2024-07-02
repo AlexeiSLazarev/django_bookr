@@ -19,12 +19,14 @@ from django.urls import path, include
 import reviews
 from reviews import urls
 from reviews.admin import admin_site
+from reviews.views import book_list
+
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('myadmin/', admin_site),
     path('', include(reviews.urls)),
-    # # path('', reviews.views.index),
+    # path('', book_list),
     # path('book-search', reviews.views.book_search)
 ]
